@@ -1,6 +1,7 @@
 package com.alexsilvacb.dslistbackend.dto;
 
 import com.alexsilvacb.dslistbackend.entities.Game;
+import com.alexsilvacb.dslistbackend.projections.GameMinProjection;
 
 public class GameMinDTO {
 
@@ -21,6 +22,15 @@ public class GameMinDTO {
 		shortDescription = entity.getShortDescription();
 	}
 
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
+	}
+
+	
 	public Long getId() {
 		return id;
 	}
